@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {FormsModule} from '@angular/forms';
+import {ToasterModule} from 'angular2-toaster';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HotkeyModule} from 'angular2-hotkeys';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,12 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToasterModule.forRoot(),
+    CommonModule,
+    HotkeyModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

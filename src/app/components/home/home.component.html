@@ -14,7 +14,7 @@
       <div class="form-group col-sm">
         <div class="form-check ">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[1]" id="keys-Db" name="keys-Db">
-          <label class="form-check-label" for="keys-D">Db</label>
+          <label class="form-check-label" for="keys-Db">Db</label>
         </div>
       </div>
       <div class="form-group col-sm">
@@ -97,13 +97,13 @@
       <div class="form-group col-sm">
         <div class="form-check ">
           <input class="form-check-input" type="checkbox" id="type-dominant7" [(ngModel)]="chordTypes[2]" name="type-dominant7">
-          <label class="form-check-label" for="type-minor7">Dominant7</label>
+          <label class="form-check-label" for="type-dominant7">Dominant7</label>
         </div>
       </div>
       <div class="form-group col-sm">
         <div class="form-check ">
           <input class="form-check-input" type="checkbox" id="type-half-diminished7" [(ngModel)]="chordTypes[3]" name="type-half-diminished7">
-          <label class="form-check-label" for="type-minor7">Half-Diminished7</label>
+          <label class="form-check-label" for="type-half-diminished7">Half-Diminished7</label>
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Start</button>
+    <button type="submit" class="btn btn-outline-dark btn-block">Reset</button>
   </form>
 
 
@@ -165,12 +165,14 @@
     <div class="col-sm-5">
       <img src="../../../assets/images/stave.png" class="img-fluid" alt="Responsive image">
     </div>
-    <button class="btn btn-outline-dark btn-block" (click)="onNewValue()">New Value</button>
   </div>
+  <br>
+  <button class="btn btn-outline-dark btn-block" (click)="onNewValue()">New Value</button>
+
   <hr>
   <div>
     <img src="../../../assets/images/fretboard.png" class="img-fluid" alt="Responsive image" style="width: 100%;">
-
   </div>
 </div>
 
+<toaster-container></toaster-container>

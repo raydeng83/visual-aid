@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ToasterService} from 'angular2-toaster';
+import {Hotkey, HotkeysService} from 'angular2-hotkeys';
 
 const keyArr = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 // const chordTypeArr = ['Major7', 'Minor7', 'Dominant7', 'Half-diminished']
@@ -25,7 +27,12 @@ export class HomeComponent implements OnInit {
   public currentChordType;
   public currentChordTone;
 
-  constructor() { }
+  constructor(private toasterService: ToasterService, private hotkeysService: HotkeysService) {
+    this.hotkeysService.add(new Hotkey('space', (event: KeyboardEvent): boolean => {
+      this.onNewValue();
+      return false; // Prevent bubbling
+    }));
+  }
 
   onStart() {
     this.currentKeys = [];
@@ -50,10 +57,8 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    console.log(this.currentKeys);
-    console.log(this.currentChordTypes);
-    console.log(this.currentChordTones);
-
+    // alert('Configuration has reset');
+    this.toasterService.pop('info', 'Configuration has reset!');
   }
 
   onNewValue() {
@@ -63,6 +68,23 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    for (let i = 0; i < this.keys.length; i++) {
+      if (this.keys[i]) {
+        this.currentKeys.push(keyArr[i]);
+      }
+    }
+
+    for (let i = 0; i < this.chordTypes.length; i++) {
+      if (this.chordTypes[i]) {
+        this.currentChordTypes.push(chordTypeArr[i]);
+      }
+    }
+
+    for (let i = 0; i < this.chordToneNumber.length; i++) {
+      if (this.chordToneNumber[i]) {
+        this.currentChordTones.push(chordToneNumberArr[i]);
+      }
+    }
   }
 
 }
