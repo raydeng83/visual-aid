@@ -3,76 +3,76 @@
   <p class="lead">This tool generate random chords and you can practice visualizing chord tones based on the chord.</p>
   <form (submit)="onStart()">
     <!--Select Keys-->
+    <h6>Select Keys:</h6>
     <div class="form-row">
-      <h6>Select Keys:</h6>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="keys-C" [(ngModel)]="keys[0]" name="keys-C">
           <label class="form-check-label" for="keys-C">C</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[1]" id="keys-Db" name="keys-Db">
           <label class="form-check-label" for="keys-Db">Db</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[2]" id="keys-D" name="keys-D">
           <label class="form-check-label" for="keys-D">D</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group ">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[3]" id="keys-Eb" name="keys-Eb">
           <label class="form-check-label" for="keys-Eb">Eb</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[4]" id="keys-E" name="keys-E">
           <label class="form-check-label" for="keys-E">E</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[5]" id="keys-F" name="keys-F">
           <label class="form-check-label" for="keys-F">F</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[6]" id="keys-Gb" name="keys-Gb">
           <label class="form-check-label" for="keys-Gb">Gb</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[7]" id="keys-G" name="keys-G">
           <label class="form-check-label" for="keys-G">G</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[8]" id="keys-Ab" name="keys-Ab">
           <label class="form-check-label" for="keys-Ab">Ab</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[9]" id="keys-A" name="keys-A">
           <label class="form-check-label" for="keys-A">A</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[10]" id="keys-Bb" name="keys-Bb">
           <label class="form-check-label" for="keys-Bb">Bb</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" [(ngModel)]="keys[11]" id="keys-B" name="keys-B">
           <label class="form-check-label" for="keys-B">B</label>
         </div>
@@ -80,28 +80,28 @@
     </div>
 
     <!--Select Chord Types-->
+    <h6>Select Chord Types:</h6>
     <div class="form-row">
-      <h6>Select Chord Types:</h6>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="type-major7" [(ngModel)]="chordTypes[0]" name="type-major7">
           <label class="form-check-label" for="type-major7">Major7</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="type-minor7" [(ngModel)]="chordTypes[1]" name="type-minor7">
           <label class="form-check-label" for="type-minor7">Minor7</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="type-dominant7" [(ngModel)]="chordTypes[2]" name="type-dominant7">
           <label class="form-check-label" for="type-dominant7">Dominant7</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="type-half-diminished7" [(ngModel)]="chordTypes[3]" name="type-half-diminished7">
           <label class="form-check-label" for="type-half-diminished7">Half-Diminished7</label>
         </div>
@@ -109,40 +109,40 @@
     </div>
 
     <!--Select Chord Tones-->
+    <h6>Select Chord Tones:</h6>
     <div class="form-row">
-      <h6>Select Chord Tones:</h6>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-3" [(ngModel)]="chordToneNumber[0]" name="tone-3">
           <label class="form-check-label" for="tone-3">3rd</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-5" [(ngModel)]="chordToneNumber[1]" name="tone-5">
           <label class="form-check-label" for="tone-5">5th</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-7" [(ngModel)]="chordToneNumber[2]" name="tone-7">
           <label class="form-check-label" for="tone-7">7th</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-9" [(ngModel)]="chordToneNumber[3]" name="tone-9">
           <label class="form-check-label" for="tone-9">9th</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-11" [(ngModel)]="chordToneNumber[4]" name="tone-11">
           <label class="form-check-label" for="tone-11">11th</label>
         </div>
       </div>
-      <div class="form-group col-sm">
-        <div class="form-check ">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="tone-13" [(ngModel)]="chordToneNumber[5]" name="tone-13">
           <label class="form-check-label" for="tone-13">13th</label>
         </div>
@@ -163,7 +163,9 @@
       <h1 style="font-size: 4em; margin-top: 20px;">{{currentChordTone}}</h1>
     </div>
     <div class="col-sm-5">
+      <div style="margin-top: 20px;">
       <img src="assets/images/stave.png" class="img-fluid" alt="Responsive image">
+      </div>
     </div>
   </div>
   <br>
