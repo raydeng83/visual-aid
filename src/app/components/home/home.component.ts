@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ToasterService} from 'angular2-toaster';
 import {Hotkey, HotkeysService} from 'angular2-hotkeys';
 
@@ -13,7 +13,7 @@ const chordToneNumberArr = ['3rd', '5th', '7th', '9th', '11th', '13th'];
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   public keys = [true, true, true, true, true, true, true, true, true, true, true, true];
   public chordTypes = [true, true, true, true];
@@ -26,6 +26,15 @@ export class HomeComponent implements OnInit {
   public currentKey;
   public currentChordType;
   public currentChordTone;
+
+  public counter = 0;
+  public timerRef;
+  public running = false;
+  public startText = 'Start';
+  public record = 0;
+  public displayCounter = true;
+  public displayRecord = true;
+  public showCounter = true;
 
   constructor(private toasterService: ToasterService, private hotkeysService: HotkeysService) {
     this.hotkeysService.add(new Hotkey('space', (event: KeyboardEvent): boolean => {
@@ -65,6 +74,41 @@ export class HomeComponent implements OnInit {
     this.currentKey = this.currentKeys[Math.floor(Math.random() * this.currentKeys.length)];
     this.currentChordType = this.currentChordTypes[Math.floor(Math.random() * this.currentChordTypes.length)];
     this.currentChordTone = this.currentChordTones[Math.floor(Math.random() * this.currentChordTones.length)];
+    this.clearTimer();
+    this.startTimer();
+  }
+
+  startTimer() {
+    if (this.showCounter) {
+      this.displayCounter = true;
+    }
+
+    this.running = !this.running;
+    if (this.running) {
+      this.startText = 'Stop';
+      const startTime = Date.now() - (this.counter || 0);
+      this.timerRef = setInterval(() => {
+        this.counter = Date.now() - startTime;
+        if (this.counter > 15000) {
+          this.displayCounter = false;
+        }
+      });
+    } else {
+      this.startText = 'Resume';
+      clearInterval(this.timerRef);
+    }
+  }
+
+  clearTimer() {
+    this.record = this.counter;
+    this.running = false;
+    this.startText = 'Start';
+    this.counter = 0;
+    clearInterval(this.timerRef);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timerRef);
   }
 
   ngOnInit() {

@@ -149,6 +149,24 @@
       </div>
     </div>
 
+
+    <!--Display Timer-->
+    <h6>Display Timer:</h6>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="counter" [(ngModel)]="showCounter" name="counter">
+          <label class="form-check-label" for="counter">Display Counter</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="record" [(ngModel)]="displayRecord" name="record">
+          <label class="form-check-label" for="record">Display record</label>
+        </div>
+      </div>
+    </div>
+
     <button type="submit" class="btn btn-outline-dark btn-block">Reset</button>
   </form>
 
@@ -158,6 +176,8 @@
   <div class="row text-center">
     <div class="col-sm-5">
       <h1 style="font-size: 7em;">{{currentKey}} {{currentChordType}}</h1>
+      <span *ngIf="displayRecord" class="float-left">{{record}} ms</span>
+      <span *ngIf="displayCounter && showCounter" class="float-right">{{counter}} ms</span>
     </div>
     <div class="col-sm-2" style="border: 5px dashed black;">
       <h1 style="font-size: 4em; margin-top: 20px;">{{currentChordTone}}</h1>
