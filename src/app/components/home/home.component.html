@@ -149,9 +149,52 @@
       </div>
     </div>
 
+    <!--Select Major Scale Fragment Patterns-->
+    <h6>Select Major Fragment Patterns:</h6>
+    <div class="form-row">
+      <div *ngFor="let majorFragment of majorFragmentPatternsArr; index as i" class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" [id]="major-fragment-i" [(ngModel)]="majorFragmentPatterns[i]" name="major-fragment-i">
+          <label class="form-check-label" [for]="major-fragment-i">{{majorFragment}}</label>
+        </div>
+      </div>
+    </div>
 
-    <!--Display Timer-->
-    <h6>Display Timer:</h6>
+    <!--Select Minor Scale Fragment Patterns-->
+    <h6>Select Minor Fragment Patterns:</h6>
+    <div class="form-row">
+      <div *ngFor="let minorFragment of minorFragmentPatternsArr; index as i" class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" [id]="minor-fragment-i" [(ngModel)]="minorFragmentPatterns[i]" name="minor-fragment-i">
+          <label class="form-check-label" [for]="minor-fragment-i">{{minorFragment}}</label>
+        </div>
+      </div>
+    </div>
+
+    <!--Select Dominant Scale Fragment Patterns-->
+    <h6>Select Dominant Fragment Patterns:</h6>
+    <div class="form-row">
+      <div *ngFor="let dominantFragment of dominantFragmentPatternsArr; index as i" class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" [id]="dominant-fragment-i" [(ngModel)]="dominantFragmentPatterns[i]" name="dominant-fragment-i">
+          <label class="form-check-label" [for]="dominant-fragment-i">{{dominantFragment}}</label>
+        </div>
+      </div>
+    </div>
+
+    <!--Select Half Diminished Scale Fragment Patterns-->
+    <h6>Select Half Diminished Fragment Patterns:</h6>
+    <div class="form-row">
+      <div *ngFor="let halfDiminishedFragment of halfDiminishedFragmentPatternsArr; index as i" class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" [id]="halfDiminished-fragment-i" [(ngModel)]="halfDiminishedFragmentPatterns[i]" name="halfDiminished-fragment-i">
+          <label class="form-check-label" [for]="halfDiminished-fragment-i">{{halfDiminishedFragment}}</label>
+        </div>
+      </div>
+    </div>
+
+    <!--Controls-->
+    <h6>Controls:</h6>
     <div class="form-row">
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -165,6 +208,19 @@
           <label class="form-check-label" for="record">Display record</label>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="chordToneNumber" [(ngModel)]="chordToneNumberEnabled" name="chordToneNumber">
+          <label class="form-check-label" for="chordToneNumber">Display Chord Tone Number</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="fragmentPattern" [(ngModel)]="fragmentPatternEnabled" name="fragmentPattern">
+          <label class="form-check-label" for="fragmentPattern">Display Scale Fragment Pattern</label>
+        </div>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-outline-dark btn-block">Reset</button>
@@ -174,13 +230,14 @@
   <!--Display Content-->
   <hr class="my-4">
   <div class="row text-center">
-    <div class="col-sm-5">
+    <div class="col-sm-4">
       <h1 style="font-size: 7em;">{{currentKey}} {{currentChordType}}</h1>
       <span *ngIf="displayRecord" class="float-left">{{record}} ms</span>
       <span *ngIf="displayCounter && showCounter" class="float-right">{{counter}} ms</span>
     </div>
-    <div class="col-sm-2" style="border: 5px dashed black;">
-      <h1 style="font-size: 4em; margin-top: 20px;">{{currentChordTone}}</h1>
+    <div class="col-sm-3" style="border: 5px dashed black;">
+      <h1 *ngIf="chordToneNumberEnabled" style="font-size: 3em; margin-top: 20px;">{{currentChordTone}}</h1>
+      <h1 *ngIf="fragmentPatternEnabled" style="font-size: 3em; margin-top: 20px;">{{currentFragmentPattern}}</h1>
     </div>
     <div class="col-sm-5">
       <div style="margin-top: 20px;">
