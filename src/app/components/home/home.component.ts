@@ -33,6 +33,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   public dominantFragmentPatterns = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
   public halfDiminishedFragmentPatterns = [true, true, true, true, true, true, true, true, true, true, true, true];
 
+  public startNumber = 1;
+  public endNumber = 10;
+
   public currentKeys = [];
   public currentChordTypes = [];
   public currentChordTones = [];
@@ -45,6 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public currentChordType;
   public currentChordTone;
   public currentFragmentPattern;
+  public currentNumber;
 
   public counter = 0;
   public timerRef;
@@ -55,7 +59,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   public displayRecord = false;
   public showCounter = false;
   public chordToneNumberEnabled = true;
-  public fragmentPatternEnabled = true;
+  public fragmentPatternEnabled = false;
+  public displayNumber = false;
+
+
 
   constructor(private toasterService: ToasterService, private hotkeysService: HotkeysService) {
     this.hotkeysService.add(new Hotkey('space', (event: KeyboardEvent): boolean => {
@@ -135,8 +142,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currentFragmentPattern = this.currentMajorFragmentPatterns[Math.floor(Math.random() * this.currentMajorFragmentPatterns.length)];
     }
 
-    console.log(this.currentFragmentPattern);
-    
+    this.currentNumber = Math.floor(Math.random() * (this.endNumber - this.startNumber + 1)) + this.startNumber;
+
     this.clearTimer();
     this.startTimer();
   }

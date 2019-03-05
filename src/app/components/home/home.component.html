@@ -84,25 +84,29 @@
     <div class="form-row">
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="type-major7" [(ngModel)]="chordTypes[0]" name="type-major7">
+          <input class="form-check-input" type="checkbox" id="type-major7" [(ngModel)]="chordTypes[0]"
+                 name="type-major7">
           <label class="form-check-label" for="type-major7">Major7</label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="type-minor7" [(ngModel)]="chordTypes[1]" name="type-minor7">
+          <input class="form-check-input" type="checkbox" id="type-minor7" [(ngModel)]="chordTypes[1]"
+                 name="type-minor7">
           <label class="form-check-label" for="type-minor7">Minor7</label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="type-dominant7" [(ngModel)]="chordTypes[2]" name="type-dominant7">
+          <input class="form-check-input" type="checkbox" id="type-dominant7" [(ngModel)]="chordTypes[2]"
+                 name="type-dominant7">
           <label class="form-check-label" for="type-dominant7">Dominant7</label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="type-half-diminished7" [(ngModel)]="chordTypes[3]" name="type-half-diminished7">
+          <input class="form-check-input" type="checkbox" id="type-half-diminished7" [(ngModel)]="chordTypes[3]"
+                 name="type-half-diminished7">
           <label class="form-check-label" for="type-half-diminished7">Half-Diminished7</label>
         </div>
       </div>
@@ -154,7 +158,8 @@
     <div class="form-row">
       <div *ngFor="let majorFragment of majorFragmentPatternsArr; index as i" class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" [id]="major-fragment-i" [(ngModel)]="majorFragmentPatterns[i]" name="major-fragment-i">
+          <input class="form-check-input" type="checkbox" [id]="major-fragment-i" [(ngModel)]="majorFragmentPatterns[i]"
+                 name="major-fragment-i">
           <label class="form-check-label" [for]="major-fragment-i">{{majorFragment}}</label>
         </div>
       </div>
@@ -165,7 +170,8 @@
     <div class="form-row">
       <div *ngFor="let minorFragment of minorFragmentPatternsArr; index as i" class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" [id]="minor-fragment-i" [(ngModel)]="minorFragmentPatterns[i]" name="minor-fragment-i">
+          <input class="form-check-input" type="checkbox" [id]="minor-fragment-i" [(ngModel)]="minorFragmentPatterns[i]"
+                 name="minor-fragment-i">
           <label class="form-check-label" [for]="minor-fragment-i">{{minorFragment}}</label>
         </div>
       </div>
@@ -176,7 +182,8 @@
     <div class="form-row">
       <div *ngFor="let dominantFragment of dominantFragmentPatternsArr; index as i" class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" [id]="dominant-fragment-i" [(ngModel)]="dominantFragmentPatterns[i]" name="dominant-fragment-i">
+          <input class="form-check-input" type="checkbox" [id]="dominant-fragment-i"
+                 [(ngModel)]="dominantFragmentPatterns[i]" name="dominant-fragment-i">
           <label class="form-check-label" [for]="dominant-fragment-i">{{dominantFragment}}</label>
         </div>
       </div>
@@ -187,9 +194,24 @@
     <div class="form-row">
       <div *ngFor="let halfDiminishedFragment of halfDiminishedFragmentPatternsArr; index as i" class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" [id]="halfDiminished-fragment-i" [(ngModel)]="halfDiminishedFragmentPatterns[i]" name="halfDiminished-fragment-i">
+          <input class="form-check-input" type="checkbox" [id]="halfDiminished-fragment-i"
+                 [(ngModel)]="halfDiminishedFragmentPatterns[i]" name="halfDiminished-fragment-i">
           <label class="form-check-label" [for]="halfDiminished-fragment-i">{{halfDiminishedFragment}}</label>
         </div>
+      </div>
+    </div>
+
+    <!--A sequence of Random Numbers-->
+    <h6>Define Sequence Range for Random Numbers:</h6>
+    <div class="form-row">
+      <div class="form-inline">
+        <label class="form-label" for="start-number">Start Number </label> &nbsp;
+        <input class="form-control mr-sm-2" type="number" id="start-number" [(ngModel)]="startNumber"
+               name="start-number">
+      </div>
+      <div class="form-inline">
+        <label class="form-label" for="end-number">End Number </label> &nbsp;
+        <input class="form-control mr-sm-2" type="number" id="end-number" [(ngModel)]="endNumber" name="end-number">
       </div>
     </div>
 
@@ -211,14 +233,23 @@
 
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="chordToneNumber" [(ngModel)]="chordToneNumberEnabled" name="chordToneNumber">
+          <input class="form-check-input" type="checkbox" id="chordToneNumber" [(ngModel)]="chordToneNumberEnabled"
+                 name="chordToneNumber">
           <label class="form-check-label" for="chordToneNumber">Display Chord Tone Number</label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="fragmentPattern" [(ngModel)]="fragmentPatternEnabled" name="fragmentPattern">
+          <input class="form-check-input" type="checkbox" id="fragmentPattern" [(ngModel)]="fragmentPatternEnabled"
+                 name="fragmentPattern">
           <label class="form-check-label" for="fragmentPattern">Display Scale Fragment Pattern</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="displayNumber" [(ngModel)]="displayNumber"
+                 name="displayNumber">
+          <label class="form-check-label" for="displayNumber">Display Random Number</label>
         </div>
       </div>
     </div>
@@ -238,10 +269,12 @@
     <div class="col-sm-3" style="border: 5px dashed black;">
       <h1 *ngIf="chordToneNumberEnabled" style="font-size: 3em; margin-top: 20px;">{{currentChordTone}}</h1>
       <h1 *ngIf="fragmentPatternEnabled" style="font-size: 3em; margin-top: 20px;">{{currentFragmentPattern}}</h1>
+      <h1 *ngIf="displayNumber" style="font-size: 3em; margin-top: 20px;">{{currentNumber}}</h1>
+
     </div>
     <div class="col-sm-5">
       <div style="margin-top: 20px;">
-      <img src="assets/images/stave.png" class="img-fluid" alt="Responsive image">
+        <img src="assets/images/stave.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
   </div>
